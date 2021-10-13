@@ -7,15 +7,18 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | 3-column preview card component</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800&family=Lexend+Deca&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./public/styles.css">
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     *{
       font-family: 'Lexend Deca', sans-serif;
-      font-weight: 100;
       margin:0;
+    }
+    html {
+      font-size: 15px;
     }
     .wrapper{
       display: flex;
@@ -23,6 +26,7 @@
       align-items: center;
       padding: 20px;
       height: 90vh;
+      background: hsl(0, 0%, 95%);
     }
     .content{
       display: flex;
@@ -30,30 +34,34 @@
       color:white;
       margin: 0 auto;
       max-width: 750px;
+      border-radius: 10px;
+      overflow: hidden;
+      padding-left: 30px;
+      padding-right: 30px;
     }
     .card{
-      background: #016972;
+      background: hsl(184, 100%, 22%);
       padding: 55px;
       display: flex;
       flex-direction: column;
       gap:50px;
     }
     .card:first-child {
-      background: #e28525;
-      border-radius:10px 0 0 10px;
+      background: hsl(31, 77%, 52%);
     }
     .card:last-child {
-      background: #00403f;
-      border-radius:0 10px 10px 0;
+      background: hsl(179, 100%, 13%);
     }
     .card:first-child button{
-      color: #e28525;
+      color: hsl(31, 77%, 52%);
     }
     .card:last-child button{
-      color: #00403f;
+      color: hsl(179, 100%, 13%);
     }
-    .card:first-child button:hover, .card:last-child button:hover{
+    .card button:hover{
+      background: transparent;
       color: white;
+      cursor: pointer;
     }
     .card-logo{
       width: 80px;
@@ -62,31 +70,23 @@
       border-radius: 50px;
       border: 2px solid white;
       background: white;
-      color: #016972;
+      color: hsl(184, 100%, 22%);
       font-size: 1em;
       padding: 15px;
       width: 160px;
     }
-    .card-button:hover{
-      background: transparent;
-      color: white;
-    }
     .card-description{
-      font-size: 1em;
+      font-size: 0.9em;
+      font-weight: 400;
     }
     .card-title{
       font-size: 2.5em;
       font-family: 'Big Shoulders Display', cursive;
+      font-weight: 800;
     }
     @media (max-width: 840px) {
       .content {
         flex-direction: column;
-      }
-      .card:first-child {
-        border-radius:10px 10px 0 0;
-      }
-      .card:last-child {
-        border-radius:0 0 10px 10px;
       }
       .wrapper{
         height: 100%;
@@ -95,10 +95,10 @@
   </style>
 </head>
 <body>
-  <div class="wrapper">
+  <main class="wrapper">
     <div class="content">
         <div class="card" id="card-first">
-          <img src="images/icon-sedans.svg" class="card-logo" alt="sedans">
+          <img src="images/icon-sedans.svg" class="card-logo" alt="sedans" aria-hidden="true">
           <h4 class="card-title">Sedans</h4>
           <p class="card-description">
           Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city 
@@ -107,7 +107,7 @@
           <button class="card-button">Learn More</button>
         </div>
         <div class="card" id="card-mid">
-          <img src="images/icon-suvs.svg" class="card-logo" alt="SUVs">
+          <img src="images/icon-suvs.svg" class="card-logo" alt="SUVs" aria-hidden="true">
           <h4 class="card-title">SUVs</h4>
           <p class="card-description">
           Take an SUV for its spacious interior, power, and versatility. Perfect for your next family vacation 
@@ -116,7 +116,7 @@
           <button class="card-button">Learn More</button>
         </div>
         <div class="card" id="card-last">
-          <img src="images/icon-luxury.svg" class="card-logo" alt="Luxury">
+          <img src="images/icon-luxury.svg" class="card-logo" alt="Luxury" aria-hidden="true">
           <h4 class="card-title">Luxury</h4>
           <p class="card-description">
           Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury 
@@ -125,6 +125,6 @@
           <button class="card-button">Learn More</button>
         </div>
     </div>
-  </div>
+  </main>
 </body>
 </html>
